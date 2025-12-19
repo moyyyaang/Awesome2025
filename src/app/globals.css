@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-html {
-  overflow-y: scroll;
-}
+html {}
 
 :root {
   --background: #ffffff;
