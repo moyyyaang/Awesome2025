@@ -52,7 +52,7 @@ export default function PageBuilder({ blocks }: PageBuilderProps) {
                 };
 
                 return (
-                    <section id={block._key} key={block._key} className="snap-start min-h-screen flex flex-col justify-center w-full relative">
+                    <section id={block._key} key={block._key} className="min-h-screen flex flex-col justify-center w-full relative">
                         <BlockComponent />
                     </section>
                 );

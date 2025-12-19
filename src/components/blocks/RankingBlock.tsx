@@ -40,7 +40,7 @@ export default function RankingBlock({ items, title, layout = 'list' }: RankingB
 
                 <div className={`
                     ${layout === 'grid' ? "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4" : ""}
-                    ${layout === 'split' ? "grid grid-cols-1 md:grid-cols-2 gap-4" : ""}
+                    ${layout === 'split' ? "columns-1 md:columns-2 gap-8 space-y-4" : ""}
                     ${layout === 'list' ? "space-y-4" : ""}
                 `}>
                     {items.map((item, index) => (
@@ -53,7 +53,7 @@ export default function RankingBlock({ items, title, layout = 'list' }: RankingB
                             className={`
                                 p-6 bg-white/80 rounded-2xl shadow-lg backdrop-blur-sm hover:scale-[1.02] transition-transform duration-300 h-full flex flex-col justify-between
                                 ${layout === 'grid' ? 'items-center text-center' : 'items-center flex-row'}
-                                ${layout === 'split' ? 'items-center flex-row' : ''}
+                                ${layout === 'split' ? 'break-inside-avoid mb-4 inline-flex w-full' : ''}
                             `}
                         >
                             <div className="flex items-center flex-1 w-full">

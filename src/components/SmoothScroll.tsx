@@ -10,16 +10,7 @@ interface SmoothScrollProps {
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
     useEffect(() => {
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-        } as any)
+        const lenis = new Lenis()
 
         function raf(time: number) {
             lenis.raf(time)
