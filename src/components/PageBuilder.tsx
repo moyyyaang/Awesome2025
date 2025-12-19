@@ -4,6 +4,7 @@ import VideoBlock from './blocks/VideoBlock'
 import RankingBlock from './blocks/RankingBlock'
 import DividerBlock from './blocks/DividerBlock'
 import VideoRankingBlock from './blocks/VideoRankingBlock'
+import TableOfContents from './TableOfContents';
 
 interface PageBuilderProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,7 +22,8 @@ export default function PageBuilder({ blocks }: PageBuilderProps) {
     }
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full relative">
+            <TableOfContents blocks={blocks} />
             {blocks.map((block) => {
                 // Render the specific block component
                 const BlockComponent = () => {
@@ -50,7 +52,7 @@ export default function PageBuilder({ blocks }: PageBuilderProps) {
                 };
 
                 return (
-                    <section key={block._key} className="snap-start min-h-screen flex flex-col justify-center w-full">
+                    <section id={block._key} key={block._key} className="snap-start min-h-screen flex flex-col justify-center w-full relative">
                         <BlockComponent />
                     </section>
                 );
