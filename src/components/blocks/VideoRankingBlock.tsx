@@ -78,9 +78,11 @@ export default function VideoRankingBlock({ title, gridColumns = '3', items }: V
                                     {item.title}
                                 </h3>
                                 {item.description && (
-                                    <p className="text-gray-300 text-sm line-clamp-1">
-                                        {item.description}
-                                    </p>
+                                    <div className="mt-2">
+                                        <span className="inline-block bg-black/80 backdrop-blur-md text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-sm">
+                                            {item.description}
+                                        </span>
+                                    </div>
                                 )}
                             </div>
                         </motion.a>
